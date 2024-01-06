@@ -19,7 +19,7 @@ export async function before(m, {conn, participants}) {
   const fkontak2 = {'key': {'participants': '0@s.whatsapp.net', 'remoteJid': 'status@broadcast', 'fromMe': false, 'id': 'Halo'}, 'message': {'contactMessage': {'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:y\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}, 'participant': '0@s.whatsapp.net'};
 
   if (chat.detect2 && m.messageStubType == 29) {
-    let txt1 = `*Recientemente se ha promovido un miembro a administrador.*\n\n`;
+    let txt1 = `*se ha sido ascendido a administrador.*\n\n`;
     txt1 += `*◦  Grupo:* ${groupName}\n`;
     txt1 += `*◦  Nuevo admin:* @${m.messageStubParameters[0].split`@`[0]}\n`;
     txt1 += `*◦  Ejecutado por:* @${m.sender.split`@`[0]}`;
@@ -27,7 +27,7 @@ export async function before(m, {conn, participants}) {
   }
 
   if (chat.detect2 && m.messageStubType == 30) {
-    let txt2 = `*Recientemente se ha degradado un administrador a miembro.*\n\n`;
+    let txt2 = `*ha sido degradado a miembro.*\n\n`;
     txt2 += `*◦  Grupo:* ${groupName}\n`;
     txt2 += `*◦  Se quitó a:* @${m.messageStubParameters[0].split`@`[0]}\n`;
     txt2 += `*◦  Ejecutado por:* @${m.sender.split`@`[0]}`;
@@ -35,7 +35,7 @@ export async function before(m, {conn, participants}) {
   }
 
   if (chat.detect2 && m.messageStubType == 27) {
-    let txt3 = `*Recientemente se ha incorporado al grupo un nuevo miembro.*\n\n`;
+    let txt3 = `*se ha unido al grupo.*\n\n`;
     txt3 += `*◦  Grupo:* ${groupName}\n`;
     if (!m.sender.endsWith('@g.us')) {
       txt3 += `*◦  Se añadió a:* @${m.messageStubParameters[0].split`@`[0]}\n`;
@@ -47,7 +47,7 @@ export async function before(m, {conn, participants}) {
   }
 
   if (chat.detect2 && m.messageStubType == 28) {
-    let txt4 = `*Recientemente se ha eliminado un miembro del grupo.*\n\n`;
+    let txt4 = `*se ha eliminado.*\n\n`;
     txt4 += `*◦  Grupo:* ${groupName}\n`;
     if (!m.sender.endsWith('@g.us')) {
       txt4 += `*◦  Se eliminó a:* @${m.messageStubParameters[0].split`@`[0]}\n`;
@@ -83,7 +83,7 @@ export async function before(m, {conn, participants}) {
     } else {
       accion = 'abierto';
     }
-    let txt6 = `*Recientemente se han modificado los ajustes del grupo.*\n\n`;
+    let txt6 = `*se han modificado los ajustes del grupo.*\n\n`;
     txt6 += `*◦  Grupo:* ${groupName}\n`;
     txt6 += `*◦  El grupo se ha:* ${'```' + accion + '```'}\n`;
     txt6 += `*◦  Ejecutado por:* @${m.sender.split`@`[0]}`;
@@ -91,7 +91,7 @@ export async function before(m, {conn, participants}) {
   }
 
   if (chat.detect2 && m.messageStubType == 21) {
-    let txt7 = `*Recientemente se ha cambiado el nombre del grupo.*\n\n`;
+    let txt7 = `*se ha cambiado el nombre del grupo.*\n\n`;
     txt7 += `*◦  Nuevo nombre:* ${'```' + groupName + '```'}\n`;
     txt7 += `*◦  Ejecutado por:* @${m.sender.split`@`[0]}`;
     await conn.sendMessage(m.chat, {image: {url: pp}, caption: txt7, mentions: mentionsContentM}, {quoted: fkontak2});
